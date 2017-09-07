@@ -1,0 +1,14 @@
+$(function(){
+	$("#login1").on('submit',function(e){
+		e.preventDefault();
+		location.href='Dashboard.html';
+	});
+	$("#login2").on('submit',function(e){
+		e.preventDefault();
+		location.href='Dashboard.html';
+	});
+	$("#login3").on('submit',function(e){
+		e.preventDefault();
+		location.href='Dashboard.html';
+	});
+});
