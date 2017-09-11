@@ -316,5 +316,16 @@
 <script type="text/javascript" src="assets/plugins/nanoScroller/js/jquery.nanoscroller.min.js"></script> <!-- nano scroller -->
 <script type="text/javascript" src="assets/plugins/jquery-mousewheel/jquery.mousewheel.min.js"></script> 	<!-- Mousewheel support needed for jScrollPane -->
 <script type="text/javascript" src="assets/js/application.js"></script>
+	    <script>
+	    document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+	alert("Hello");
+    document.addEventListener("backbutton", onBackKeyDown, false);
+}
+function onBackKeyDown() 
+{
+ navigator.app.exitApp();
+}
+	    </script>
     </body>
 </html>
