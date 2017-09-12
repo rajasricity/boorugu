@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Avenger Admin Theme</title>
+    <title>Boorugu</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="description" content="Avenger Admin Theme">
-    <meta name="author" content="KaijuThemes">
+    <meta name="author" content="Boorugu">
 
     <link href='http://fonts.googleapis.com/css?family=RobotoDraft:300,400,400italic,500,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700' rel='stylesheet' type='text/css'>
@@ -48,71 +48,72 @@
 </center>
 <br/><br/>
   <ul class="nav nav-tabs">
-    <li class="active"><a href="#login1" data-toggle="tab"><i class="fa fa-user"></i></a></li>
-    <li><a href="#login2" data-toggle="tab"><i class="fa fa-user"></i></a></li>
-    <li><a href="#login3" data-toggle="tab"><i class="fa fa-user"></i></a></li>
+    <li class="active"><a href="#login1" data-toggle="tab"><img src="assets/img/customer.png" width="35" height="35" alt=""></a></li>
+    <li><a href="#login2" data-toggle="tab"><img src="assets/img/salesr.png" width="35" height="35" alt=""></a></li>
+    <li><a href="#login3" data-toggle="tab"><img src="assets/img/admin.png" width="35" height="35" alt=""></a></li>
   </ul>
   <div class="tab-content" style="background-color: transparent;border: 0px solid #fff;padding:0px;">
     <div class="tab-pane active" id="login1">
     <br/>
     <form id="login1">
-        <input type="text" name="l1uname" class="loginput" placeholder="Username" />
-        <input type="text" name="l1uname" class="loginput" placeholder="Password" />
+        <input type="text" name="l1uname" class="loginput" placeholder="Customer Username" />
+        <input type="text" name="l1uname" class="loginput" placeholder="Customer Password" />
         <center>
-    <input type="submit" name="submit" value="LOGIN" class="btn btn-danger" style="width:70px;height:70px;border-radius: 50px;">
+    <input type="submit" name="submit" value="LOGIN" class="btn btn-danger" style="width:80px;height:80px;border-radius: 50px;">
     </form>
         </center>
     </div>
     <div class="tab-pane" id="login2">
         <br/>
     <form id="login2">
-        <input type="text" name="l2uname" class="loginput" placeholder="Username" />
-        <input type="text" name="l2uname" class="loginput" placeholder="Password" />
+        <input type="text" name="l2uname" class="loginput" placeholder="Sales Username" />
+        <input type="text" name="l2uname" class="loginput" placeholder="Sales Password" />
         <center>
-    <input type="submit" name="submit" value="LOGIN" class="btn btn-danger" style="width:70px;height:70px;border-radius: 50px;">
+    <input type="submit" name="submit" value="LOGIN" class="btn btn-danger" style="width:80px;height:80px;border-radius: 50px;">
     </form>
         </center>
     </div>
     <div class="tab-pane" id="login3">
         <br/>
-    <form id="login3">
-        <input type="text" name="l3uname" class="loginput" placeholder="Username" />
-        <input type="text" name="l3uname" class="loginput" placeholder="Password" />
+    <form id="adminlogin">
+        <input type="text" name="adminusername" class="loginput" placeholder="Admin Username" required="required"/>
+        <input type="password" name="adminpassword" class="loginput" placeholder="Admin Password" required="required"/>
         <center>
-    <input type="submit" name="submit" value="LOGIN" class="btn btn-danger" style="width:70px;height:70px;border-radius: 50px;">
+    <input type="submit" name="submit" value="LOGIN" class="btn btn-danger" style="width:80px;height:80px;border-radius: 50px;">
     </form>
         </center>
     </div>
   </div>
 </div>
+<center><img src="assets/img/preloader.gif" width="32" height="32" alt="preloader" style="display:none" id="ploader"></center>
+<div class="alert alert-danger" style="display:none" id="emsg"><i class="fa fa-times"></i> Wrong username/Password.</div>
 			
 		
                             </div>
                             </div>
                             </div> <!-- .container-fluid -->
                         </div> <!-- #page-content -->
+<div id="connectloader" class="modal fade" role="dialog" style="max-height:100%;" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content mybg" id="innbody" style="height:100%;">
+      <div class="modal-header">
+        <h4 class="modal-title"><center>Connection</center></h4>
+      </div>
+      <div class="modal-body">
+<br><br><br>
+<center><img src="assets/img/noconnection.png" width="125" height="125" alt=""></center>
+<h5><center>No Connection, Please check</center></h5>
+<center><a class="btn btn-danger" href="javascript:location.reload();">RELOAD</button></a>
+      </div>
+    </div>
+
+  </div>
+</div>
                     </div>
                 </div>
             </div>
-        </div>
-
-
-        <div class="infobar-wrapper scroll-pane">
-            <div class="infobar scroll-content">
-
-    <div id="widgetarea">
-
-        
-        <div class="widget">
-        
-            
-        </div>
-
-        
-
-        
-    </div>
-</div>
         </div>
 
 <script type="text/javascript" src="assets/js/jquery-1.10.2.min.js"></script> 							<!-- Load jQuery -->
