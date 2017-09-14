@@ -43,6 +43,9 @@
 
 	<a class="" style="float: left;padding: 14px 16px;font-size: 25px;line-height: 23px;height: 48px;color:#fff" href="AdminDashboard.html">BOORUGU</a>
 	<ul class="nav navbar-nav toolbar pull-right">
+        <li class="dropdown toolbar-icon-bg">
+        <a href="javascript:window.history.back();"><span class="icon-bg"><i class="fa fa-fw fa-arrow-left"></i></span></a>
+        </li>
 		<li class="dropdown toolbar-icon-bg">
 			<a href="#" class="hasnotifications dropdown-toggle" data-toggle='dropdown'><span class="icon-bg"><i class="fa fa-fw fa-bell"></i></span></a>
 			<div class="dropdown-menu dropdown-alternate notifications arrow">
@@ -52,6 +55,7 @@
 				</div>
 				<div class="scrollthis scroll-pane">
 					<ul class="scroll-content">
+
 						<li class="">
 							<a href="#" class="notification-info">
 								<div class="notification-icon"><i class="fa fa-user fa-fw"></i></div>
@@ -99,7 +103,6 @@
 				<li><a href="#"><span class="pull-left">Settings</span> <i class="pull-right fa fa-cog"></i></a></li>
 			</ul>
 		</li>
-
 	</ul>
 
 </header>
@@ -123,7 +126,7 @@
         </div>
     </div>
 	<div class="widget stay-on-collapse" id="widget-sidebar">
-        <nav role="navigation" class="widget-body">
+         <nav role="navigation" class="widget-body">
 	<ul class="acc-menu" id="leftmenu">
 		<li class="nav-separator">Explore</li>
 		<li><a href="AdminDashboard.html"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
@@ -182,86 +185,44 @@
 		
 
 		<div class="row">
-	<div class="col-xs-6">
-								<a href="CreateSr.html" class="shortcut-tile tile-danger animated fadeIn">
-									<div class="tile-body">
-										<div class="pull-left"><i class="fa fa-user"></i></div>
-									</div>
-									<div class="tile-footer">
-										SALES
-									</div>
-								</a>
-	</div>
-	<div class="col-xs-6">
-								<a href="CreateCustomer.html" class="shortcut-tile tile-info animated fadeIn">
-									<div class="tile-body">
-										<div class="pull-left"><i class="fa fa-users"></i></div>
-									</div>
-									<div class="tile-footer">
-										CUSTOMERS
-									</div>
-								</a>
-	</div>
-		</div>
+	                <div class="col-xs-12">
+<div class="panel panel-danger" style="border:0px">
+    <div class="panel-heading">
+        <div class="panel-title"><i class="fa fa-user"></i> CREATE CUSTOMER/PARTY</div>
+    </div>
+    <div class="panel-body">
+<form id="customercreate">
+    <input type="hidden" name="cuscre" value="Customer Create"/>
+    <input type="text" name="name" class="form-control" required="required" placeholder="Name" tabindex="1"/><br>
+    <input type="text" name="Type" class="form-control" required="required" placeholder="Type" tabindex="2"/><br>
+    <input type="text" name="Address1" class="form-control" required="required" placeholder="Address1" tabindex="3"/><br>
+    <input type="text" name="Address2" class="form-control" required="required" placeholder="Address2" tabindex="4"/><br>
+    <input type="text" name="City" class="form-control" required="required" placeholder="City" tabindex="5"/><br>
+    <input type="text" name="State" class="form-control" required="required" placeholder="State" tabindex="6"/><br>
+    <input type="text" name="StateCode" class="form-control" required="required" placeholder="StateCode" tabindex="7"/><br>
+    <input type="number" name="Phone" class="form-control" required="required" placeholder="Phone" tabindex="8"/><br>
+    <input type="number" name="Fax" class="form-control" required="required" placeholder="Fax" tabindex="9"/><br>
+    <input type="email" name="Email" class="form-control" required="required" placeholder="Email" tabindex="10"/><br>
+    <input type="text" name="Cperson" class="form-control" required="required" placeholder="Contact Person" tabindex="11"/><br>
+    <input type="text" name="Cpdesignation" class="form-control" required="required" placeholder="Person Designation" tabindex="12"/><br>
+    <input type="email" name="Cpemail" class="form-control" required="required" placeholder="Person Email" tabindex="13"/><br>
+    <input type="text" name="Pan" class="form-control" required="required" placeholder="PAN Number" tabindex="14"/><br>
+    <input type="text" name="Gst" class="form-control" required="required" placeholder="GST No" tabindex="15"/><br>
+    <input type="text" name="Plist" class="form-control" required="required" placeholder="Price List" tabindex="16"/><br>
+    <select name="inds[]" id="inds" class="form-control" multiple="multiple" required tabindex="17"/>
+        <option value="">Select Industry</option>
+    </select><br>
+    <img src="assets/img/preloader.gif" width="40" height="40" alt="" style="display:none" id="ploader">
+    <input type="submit" name="customer" value="Create Customer" class="btn btn-danger pull-right btn-lg"/>
+</form>
+<br><br>
+<div class="alert alert-success" style="margin-top:20px;display:none" id="smsg">Successfully Created</div>
+    </div>
+</div>
 
-		<div class="row">
-	<div class="col-xs-6">
-								<a href="CreateProduct.html" class="shortcut-tile tile-success animated fadeIn">
-									<div class="tile-body">
-										<div class="pull-left"><i class="fa fa-files-o"></i></div>
-									</div>
-									<div class="tile-footer">
-										PRODUCTS
-									</div>
-								</a>
-	</div>
-	<div class="col-xs-6">
-								<a href="#" class="shortcut-tile tile-brown animated fadeIn">
-									<div class="tile-body">
-										<div class="pull-left"><i class="fa fa-inr"></i></div>
-									</div>
-									<div class="tile-footer">
-										PRICE LIST
-									</div>
-								</a>
-	</div>
-		</div>
-
-		<div class="row">
-	<div class="col-xs-6">
-								<a href="#" class="shortcut-tile tile-magenta animated fadeIn">
-									<div class="tile-body">
-										<div class="pull-left"><i class="fa fa-file"></i></div>
-									</div>
-									<div class="tile-footer">
-										ORDERS
-									</div>
-								</a>
-	</div>
-	<div class="col-xs-6">
-								<a href="#" class="shortcut-tile tile-midnightblue animated fadeIn">
-									<div class="tile-body">
-										<div class="pull-left"><i class="fa fa-tags"></i></div>
-									</div>
-									<div class="tile-footer">
-										REPORTS
-									</div>
-								</a>
-	</div>
-		</div>
-
-        <div class="row">
-	<div class="col-xs-6">
-								<a href="createIndustry.html" class="shortcut-tile tile-brown animated fadeIn">
-									<div class="tile-body">
-										<div class="pull-left"><i class="fa fa-star"></i></div>
-									</div>
-									<div class="tile-footer">
-										INDUSTRY
-									</div>
-								</a>
-	</div>
-		</div>
+<a href="Customers.html" class="btn btn-danger btn-lg" style="width:100%"><i class="fa fa-eye"></i> LIST OF CUSTOMERS</a>
+                	</div>
+			</div>
 	</div>
 </div>
 			
@@ -310,8 +271,9 @@
 <script type="text/javascript" src="assets/js/application.js"></script>
 <script type="text/javascript" src="assets/js/admincustom.js"></script>
 <script language="javascript">
+var server = "http://mukthasis.com/boorugu/";
 $(document).ready(function () {
-
+   $("#inds").load(server+'allindustries.php');
 });
 </script>
     </body>

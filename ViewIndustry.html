@@ -43,6 +43,9 @@
 
 	<a class="" style="float: left;padding: 14px 16px;font-size: 25px;line-height: 23px;height: 48px;color:#fff" href="AdminDashboard.html">BOORUGU</a>
 	<ul class="nav navbar-nav toolbar pull-right">
+        <li class="dropdown toolbar-icon-bg">
+        <a href="javascript:window.history.back();"><span class="icon-bg"><i class="fa fa-fw fa-arrow-left"></i></span></a>
+        </li>
 		<li class="dropdown toolbar-icon-bg">
 			<a href="#" class="hasnotifications dropdown-toggle" data-toggle='dropdown'><span class="icon-bg"><i class="fa fa-fw fa-bell"></i></span></a>
 			<div class="dropdown-menu dropdown-alternate notifications arrow">
@@ -52,6 +55,7 @@
 				</div>
 				<div class="scrollthis scroll-pane">
 					<ul class="scroll-content">
+
 						<li class="">
 							<a href="#" class="notification-info">
 								<div class="notification-icon"><i class="fa fa-user fa-fw"></i></div>
@@ -99,7 +103,6 @@
 				<li><a href="#"><span class="pull-left">Settings</span> <i class="pull-right fa fa-cog"></i></a></li>
 			</ul>
 		</li>
-
 	</ul>
 
 </header>
@@ -123,7 +126,7 @@
         </div>
     </div>
 	<div class="widget stay-on-collapse" id="widget-sidebar">
-        <nav role="navigation" class="widget-body">
+         <nav role="navigation" class="widget-body">
 	<ul class="acc-menu" id="leftmenu">
 		<li class="nav-separator">Explore</li>
 		<li><a href="AdminDashboard.html"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
@@ -182,86 +185,29 @@
 		
 
 		<div class="row">
-	<div class="col-xs-6">
-								<a href="CreateSr.html" class="shortcut-tile tile-danger animated fadeIn">
-									<div class="tile-body">
-										<div class="pull-left"><i class="fa fa-user"></i></div>
-									</div>
-									<div class="tile-footer">
-										SALES
-									</div>
-								</a>
-	</div>
-	<div class="col-xs-6">
-								<a href="CreateCustomer.html" class="shortcut-tile tile-info animated fadeIn">
-									<div class="tile-body">
-										<div class="pull-left"><i class="fa fa-users"></i></div>
-									</div>
-									<div class="tile-footer">
-										CUSTOMERS
-									</div>
-								</a>
-	</div>
-		</div>
+	                <div class="col-xs-12">
+<div class="panel panel-danger" style="border:0px">
+    <div class="panel-heading">
+        <div class="panel-title"><i class="fa fa-user"></i> LIST OF INDUSTRIES</div>
+    </div>
+    <div class="panel-body no-padding">
+<div class="table-responsive" style="padding-bottom:20px;">
+<table class="table" id="industry">
+    <thead>
+        <tr>
+            <th>Code</th><th>Industry</th>
+        </tr>
+    </thead>
+    <tbody>
 
-		<div class="row">
-	<div class="col-xs-6">
-								<a href="CreateProduct.html" class="shortcut-tile tile-success animated fadeIn">
-									<div class="tile-body">
-										<div class="pull-left"><i class="fa fa-files-o"></i></div>
-									</div>
-									<div class="tile-footer">
-										PRODUCTS
-									</div>
-								</a>
-	</div>
-	<div class="col-xs-6">
-								<a href="#" class="shortcut-tile tile-brown animated fadeIn">
-									<div class="tile-body">
-										<div class="pull-left"><i class="fa fa-inr"></i></div>
-									</div>
-									<div class="tile-footer">
-										PRICE LIST
-									</div>
-								</a>
-	</div>
-		</div>
+    </tbody>
+</table>
+</div>
+    </div>
+</div>
 
-		<div class="row">
-	<div class="col-xs-6">
-								<a href="#" class="shortcut-tile tile-magenta animated fadeIn">
-									<div class="tile-body">
-										<div class="pull-left"><i class="fa fa-file"></i></div>
-									</div>
-									<div class="tile-footer">
-										ORDERS
-									</div>
-								</a>
-	</div>
-	<div class="col-xs-6">
-								<a href="#" class="shortcut-tile tile-midnightblue animated fadeIn">
-									<div class="tile-body">
-										<div class="pull-left"><i class="fa fa-tags"></i></div>
-									</div>
-									<div class="tile-footer">
-										REPORTS
-									</div>
-								</a>
-	</div>
-		</div>
-
-        <div class="row">
-	<div class="col-xs-6">
-								<a href="createIndustry.html" class="shortcut-tile tile-brown animated fadeIn">
-									<div class="tile-body">
-										<div class="pull-left"><i class="fa fa-star"></i></div>
-									</div>
-									<div class="tile-footer">
-										INDUSTRY
-									</div>
-								</a>
-	</div>
-		</div>
+                	</div>
+			</div>
 	</div>
 </div>
 			
