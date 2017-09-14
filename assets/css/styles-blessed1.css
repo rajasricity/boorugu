@@ -207,7 +207,7 @@ span[data-style="panel-warning"] {
   background-color: #ffeb3b;
 }
 span[data-style="panel-danger"] {
-  background-color: #e51c23;
+  background-color: #CA5D67;
 }
 span[data-style="panel-info"] {
   background-color: #00bcd4;
@@ -497,7 +497,7 @@ body.nooverflow {
 }
 .panel.panel-danger .panel-heading {
   color: #fde0dc;
-  background-color: #e51c23;
+  background-color: #CA5D67;
   border-color: #dd191d;
 }
 .panel.panel-danger .panel-heading h2 {
@@ -1544,19 +1544,19 @@ body.nooverflow {
   border-bottom: 1px dashed rgba(139, 195, 74, 0.09);
 }
 .pricing-table-1-container.pricing-danger .pricing-box h3 {
-  background: #e51c23;
+  background: #CA5D67;
 }
 .pricing-table-1-container.pricing-danger .pricing-box:hover {
-  border: 2px solid #e51c23;
+  border: 2px solid #CA5D67;
 }
 .pricing-table-1-container.pricing-danger .pricing-box:hover h4 {
-  color: #e51c23;
+  color: #CA5D67;
 }
 .pricing-table-1-container.pricing-danger .pricing-box.pricing-active {
-  border: 2px solid #e51c23;
+  border: 2px solid #CA5D67;
 }
 .pricing-table-1-container.pricing-danger .pricing-box.pricing-active .pricing-head h4 {
-  color: #e51c23;
+  color: #CA5D67;
   background: rgba(229, 28, 35, 0.03);
   border-bottom: 1px dashed rgba(229, 28, 35, 0.09);
 }
@@ -2036,7 +2036,7 @@ a.amazo-tile {
 .shortcut-tile.tile-danger .tile-heading,
 .shortcut-tile.tile-danger .tile-body,
 .shortcut-tile.tile-danger .tile-footer {
-  background: #e51c23;
+  background: #CA5D67;
 }
 .shortcut-tile.tile-danger:hover {
   color: #ffffff;
@@ -2483,16 +2483,16 @@ a.amazo-tile {
   color: #ffffff !important;
 }
 .info-tile.tile-danger .tile-heading {
-  background: #e51c23;
+  background: #CA5D67;
 }
 .info-tile.tile-danger .tile-body {
-  background: #e51c23;
+  background: #CA5D67;
 }
 .info-tile.tile-danger .tile-body-alt {
-  background: #e51c23;
+  background: #CA5D67;
 }
 .info-tile.tile-danger .tile-footer {
-  background: #e51c23;
+  background: #CA5D67;
 }
 .info-tile.tile-danger:hover {
   color: #ffffff;
@@ -3463,7 +3463,7 @@ a.amazo-tile {
 .info-tile.tile-alt.tile-danger .tile-heading,
 .info-tile.tile-alt.tile-danger .tile-body,
 .info-tile.tile-alt.tile-danger .tile-footer {
-  background: #e51c23 !important;
+  background: #CA5D67 !important;
 }
 .info-tile.tile-alt.tile-danger:hover .tile-heading,
 .info-tile.tile-alt.tile-danger:hover .tile-body,
@@ -3945,7 +3945,7 @@ a.amazo-tile {
 .panel-todo ul li.item-danger {
   margin-left: -1px;
   padding-left: 1px;
-  border-left: 2px solid #e51c23;
+  border-left: 2px solid #CA5D67;
 }
 .panel-todo ul li.item-warning {
   margin-left: -1px;
@@ -4058,13 +4058,13 @@ a.amazo-tile {
 }
 .chat-danger .chat-text {
   color: #fff !important;
-  background-color: #e51c23 !important;
+  background-color: #CA5D67 !important;
 }
 .chat-danger:after {
-  border-right-color: #e51c23 !important;
+  border-right-color: #CA5D67 !important;
 }
 .chat-danger.me:after {
-  border-left-color: #e51c23 !important;
+  border-left-color: #CA5D67 !important;
 }
 .chat-success .chat-text {
   color: #fff !important;
@@ -4475,16 +4475,16 @@ ul.mailbox-msg-list li a.mailbox-msg-list-item div .msg {
   border-bottom-color: #ffeb3b;
 }
 .tab-danger.tab-container > .nav-tabs > li.active > a {
-  border-top-color: #e51c23;
+  border-top-color: #CA5D67;
 }
 .tab-danger.tab-container.tab-left > .nav-tabs > li.active > a {
-  border-left-color: #e51c23;
+  border-left-color: #CA5D67;
 }
 .tab-danger.tab-container.tab-right > .nav-tabs > li.active > a {
-  border-right-color: #e51c23;
+  border-right-color: #CA5D67;
 }
 .tab-danger.tab-container.tab-bottom > .nav-tabs > li.active > a {
-  border-bottom-color: #e51c23;
+  border-bottom-color: #CA5D67;
 }
 .tab-success.tab-container > .nav-tabs > li.active > a {
   border-top-color: #8bc34a;
@@ -4849,13 +4849,13 @@ ul.mailbox-msg-list li a.mailbox-msg-list-item div .msg {
   color: #ffeb3b;
 }
 .timeline-danger .timeline-body {
-  border-color: #e51c23;
+  border-color: #CA5D67;
 }
 .timeline-danger .timeline-body:after {
-  border-right-color: #e51c23 !important;
+  border-right-color: #CA5D67 !important;
 }
 .timeline-danger .timeline-time {
-  color: #e51c23;
+  color: #CA5D67;
 }
 .timeline-success .timeline-body {
   border-color: #8bc34a;
@@ -5463,8 +5463,8 @@ i.ar {
 .ui-slider.danger .ui-widget-header,
 .ui-slider.danger .ui-slider-handle:hover,
 .ui-slider.danger .ui-slider-handle:active {
-  background: #e51c23 !important;
-  background-color: #e51c23 !important;
+  background: #CA5D67 !important;
+  background-color: #CA5D67 !important;
 }
 .ui-slider.midnightblue .ui-widget-header,
 .ui-slider.midnightblue .ui-slider-handle:hover,
@@ -5965,10 +5965,10 @@ fieldset[disabled] .panel .fc-header .fc-button.active {
 }
 .toggle-danger .toggle-slide .toggle-on,
 .toggle-danger .toggle-slide .toggle-on.active {
-  background-color: #e51c23;
+  background-color: #CA5D67;
 }
 .toggle-danger .toggle-slide.active .toggle-blob {
-  border: 1px solid #e51c23;
+  border: 1px solid #CA5D67;
 }
 .toggle-info .toggle-slide .toggle-on,
 .toggle-info .toggle-slide .toggle-on.active {
@@ -7452,7 +7452,7 @@ input.dial {
   box-sizing: border-box !important;
 }
 .fn-gantt .bar.ganttRed {
-  background-color: #e51c23 !important;
+  background-color: #CA5D67 !important;
 }
 .fn-gantt .bar.ganttGreen {
   background-color: #4caf50 !important;
@@ -7641,7 +7641,7 @@ svg.peity {
   border-radius: 2px;
 }
 .card-task.card-danger {
-  border-color: #e51c23;
+  border-color: #CA5D67;
   border-style: solid;
   border-width: 2px 2px 2px;
   border-radius: 2px;
@@ -8834,7 +8834,7 @@ ul.demo-btns > li {
   border: 0px solid #ff4f18;
 }
 .demo-options .demo-color-list .demo-danger {
-  background-color: #e51c23;
+  background-color: #CA5D67;
   border: 0px solid #dd1920;
 }
 .demo-options .demo-color-list .demo-midnightblue {
@@ -9386,7 +9386,7 @@ ul.demo-btns > li {
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger,
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-danger {
   color: rgba(255, 255, 255, 0.8);
-  background: #e51c23;
+  background: #CA5D67;
   box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
 }
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default,

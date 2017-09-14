@@ -3406,7 +3406,7 @@ fieldset[disabled] .btn-warning.active {
 }
 .btn-danger {
   color: #ffffff;
-  background-color: #e51c23;
+  background-color: #CA5D67;
   border-color: #dd191d;
 }
 .btn-danger:hover,
@@ -3442,11 +3442,11 @@ fieldset[disabled] .btn-danger:active,
 .btn-danger.disabled.active,
 .btn-danger[disabled].active,
 fieldset[disabled] .btn-danger.active {
-  background-color: #e51c23;
+  background-color: #CA5D67;
   border-color: #dd191d;
 }
 .btn-danger .badge {
-  color: #e51c23;
+  color: #CA5D67;
   background-color: #ffffff;
 }
 .btn-danger:hover {
@@ -3481,11 +3481,11 @@ fieldset[disabled] .btn-danger:active,
 .btn-danger.disabled.active,
 .btn-danger[disabled].active,
 fieldset[disabled] .btn-danger.active {
-  background-color: #e51c23;
+  background-color: #CA5D67;
   border-color: #dd191d;
 }
 .btn-danger .badge {
-  color: #e51c23;
+  color: #CA5D67;
   background-color: #ffffff;
 }
 .btn-link {
@@ -5082,7 +5082,7 @@ a.label:focus {
   background-color: #ffe608;
 }
 .label-danger {
-  background-color: #e51c23;
+  background-color: #CA5D67;
 }
 .label-danger[href]:hover,
 .label-danger[href]:focus {
@@ -5211,7 +5211,7 @@ a.badge:focus {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-bar-danger {
-  background-color: #e51c23;
+  background-color: #CA5D67;
 }
 .progress-striped .progress-bar-danger {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
@@ -7970,9 +7970,9 @@ fieldset[disabled] .btn-warning-alt.active {
   border-width: 1px 1px 1px 1px;
 }
 .btn-danger-alt {
-  color: #e51c23;
+  color: #CA5D67;
   background-color: rgba(255, 255, 255, 0);
-  border-color: #e51c23;
+  border-color: #CA5D67;
   border-width: 1px;
   border-style: solid;
   -webkit-box-shadow: none;
@@ -7982,8 +7982,8 @@ fieldset[disabled] .btn-warning-alt.active {
 .btn-danger-alt:focus,
 .btn-danger-alt:active,
 .btn-danger-alt.active {
-  border-color: #e51c23;
-  background-color: #e51c23;
+  border-color: #CA5D67;
+  background-color: #CA5D67;
   color: #fff;
 }
 .btn-danger-alt.disabled,
@@ -8005,7 +8005,7 @@ fieldset[disabled] .btn-danger-alt:active,
 .btn-danger-alt.disabled.active,
 .btn-danger-alt[disabled].active,
 fieldset[disabled] .btn-danger-alt.active {
-  border-color: #e51c23;
+  border-color: #CA5D67;
   background-color: #a21318;
   color: #fff;
 }
