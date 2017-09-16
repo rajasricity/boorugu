@@ -20,7 +20,8 @@
 
     <link type="text/css" href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">        <!-- Font Awesome -->
     <link type="text/css" href="assets/css/styles.css" rel="stylesheet">                                     <!-- Core CSS with allstyles -->
-    <link type="text/css" href="assets/css/animate.css" rel="stylesheet">                                     <!-- Core CSS with all 
+    <link type="text/css" href="assets/css/animate.css" rel="stylesheet">                                     <!-- Core CSS with all -->
+    <link rel="stylesheet" type="text/css" href="assets/css/select.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries. Placeholdr.js enables the placeholder attribute -->
     <!--[if lt IE 9]>
@@ -126,7 +127,7 @@
         </div>
     </div>
 	<div class="widget stay-on-collapse" id="widget-sidebar">
-        <nav role="navigation" class="widget-body">
+         <nav role="navigation" class="widget-body">
 	<ul class="acc-menu" id="leftmenu">
 		<li class="nav-separator">Explore</li>
 		<li><a href="AdminDashboard.html"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
@@ -186,26 +187,35 @@
 
 		<div class="row">
 	                <div class="col-xs-12">
-<div class="panel panel-danger" style="border:0px">
+<div class="panel panel-danger animated fadeIn" style="border:0px">
     <div class="panel-heading">
-        <div class="panel-title"><i class="fa fa-user"></i> LIST OF SALES EXECUTIVE</div>
+        <div class="panel-title"><i class="fa fa-file"></i> CREATE ORDER</div>
     </div>
     <div class="panel-body no-padding">
-<div class="table-responsive" style="padding-bottom:20px;">
-<table class="table" id="emps">
-    <thead>
-        <tr>
-            <th>Sno</th><th>Name</th><th>Designation</th><th>Mobile</th><th>Password</th>
-        </tr>
-    </thead>
-    <tbody>
-
-    </tbody>
+<form id="ordercreate" onSubmit="document.getElementById('submit').disabled=true;">
+<table class="table table-bordered">
+<tr><td>
+    <select name="customer" id="customer" class="form-control" required>
+        <option value="">SELECT CUSTOMER</option>
+    </select>
+    <input type="hidden" name="cby" value='' id="cby"/>
+</td></tr>
+<tr><td>
+    <select name="industryorder" id="industryorder" class="form-control" onchange="showOrderForm(this.value);" required></select>
+</td></tr>
 </table>
+<div class="table-responsive" style="padding-bottom:20px;">
+<table class="table table-bordered" id="oform" style="width:900px"></table>
 </div>
+    <img src="assets/img/preloader.gif" width="40" height="40" alt="" style="display:none" id="ploader">
+    <input type="submit" name="customer" id="submit" value="Create Product" class="btn btn-danger pull-right btn-lg"/>
+</form>
+<br><br>
+<div class="alert alert-success" style="margin-top:20px;display:none" id="smsg">Successfully Created</div>
     </div>
 </div>
 
+<a href="Orders.html" class="btn btn-danger btn-lg" style="width:100%"><i class="fa fa-eye"></i> LIST OF ORDERS</a>
                 	</div>
 			</div>
 	</div>
@@ -252,14 +262,14 @@
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script> 								<!-- Load Bootstrap -->
 <script type="text/javascript" src="assets/js/enquire.min.js"></script> 									<!-- Enquire for Responsiveness -->
 <script type="text/javascript" src="assets/plugins/nanoScroller/js/jquery.nanoscroller.min.js"></script> <!-- nano scroller -->
-<script type="text/javascript" src="assets/plugins/jquery-mousewheel/jquery.mousewheel.min.js"></script> 	<!-- Mousewheel support needed for jScrollPane -->
+<script type="text/javascript" src="assets/plugins/jquery-mousewheel/jquery.mousewheel.min.js"></script>
 <script type="text/javascript" src="assets/js/application.js"></script>
 <script type="text/javascript" src="assets/js/admincustom.js"></script>
 <script language="javascript">
+var server = "http://mukthasis.com/boorugu/";
 $(document).ready(function () {
-
+$("#inds").load(server+"allindustries.php");
 });
-
 </script>
     </body>
 </html>
