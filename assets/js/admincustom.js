@@ -84,7 +84,29 @@ if(localStorage.getItem('User') && localStorage.getItem("Role")){
      });
   });
 
-$("#emps tbody").html("");
+   $("#ordercreate").on('submit', function(e){
+    e.preventDefault();
+    $("#cby").val(localStorage.getItem("User"));
+     var fdata = $("#ordercreate").serialize();
+     $.ajax({
+        url:server+"ordercreate.php",
+        data:fdata,
+        type:"post",
+        beforeSend:function(){
+          $("#ploader").show();
+        },
+        success: function(str){
+          $("#ploader").hide();
+          $("#smsg").show();
+          $("#ordercreate")[0].reset();
+          $("#submit").prop('disabled',false);
+        },
+        error: function(xhr){
+           alert('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);
+        }
+     });
+  });
+
 var url = server+"employeesList.php";
 $("#emps tbody").html("");
 $.getJSON(url,function(data){
@@ -167,6 +189,52 @@ $.getJSON(url2,function(data){
    });
 });
 
+$("#orders tbody").html("");
+var url2 = server+"orders.php";
+$.getJSON(url2,function(data){
+   $.each(data.users, function(i,user){
+      var newRow=
+      "<tr>"
+      +"<td>"+(i+1)+"</td>"
+      +"<td>"+user.OrderId+"</td>"
+      +"<td>"+user.CreateBy+"</td>"
+      +"<td>"+user.Division+"</td>"
+      +"<td>"+user.Customer+"</td>"
+      +"<td>"+user.Industry+"</td>"
+      +"<td>"+user.Product+"</td>"
+      +"<td>"+user.Pid+"</td>"
+      +"<td>"+user.Price+"</td>"
+      +"<td>"+user.Qty+"</td>"
+      +"<td>"+user.Amount+"</td>"
+      +"</tr>";
+      $(newRow).appendTo("#orders tbody");
+   });
+});
+
+var url3 = server+"customerlist.php";
+$("#customer").html("");
+var newRow= "<option value=''>SELECT CUSTOMER</option>";
+$(newRow).appendTo("#customer");
+$.getJSON(url3,function(data){
+   $.each(data.customers, function(i,customer){
+      var newRow=
+      "<option value='"+customer.Sno+"'>"+customer.Name+"</option>";
+      $(newRow).appendTo("#customer");
+   });
+});
+
+var url4 = server+"industries.php";
+$("#industryorder").html("");
+var newRow= "<option value=''>SELECT INDUSTRY</option>";
+$(newRow).appendTo("#industryorder");
+$.getJSON(url4,function(data){
+   $.each(data.users, function(i,indus){
+      var newRow=
+      "<option value='"+indus.Sno+"'>"+indus.Industry+"</option>";
+      $(newRow).appendTo("#industryorder");
+   });
+});
+
 });
 function connection(){
   $.ajax({
@@ -178,4 +246,28 @@ function connection(){
        $("#connectloader").modal("show");
      }
   });
+}
+
+function showOrderForm(inds){
+  if(inds != ''){
+   $.ajax({
+      url:server+"orderform.php",
+      success: function(str){
+        $("#oform").html(str);
+      }
+   });
+  }
+}
+
+function showComment(val,id){
+    if(val != ''){
+      $("#"+id).show();
+    }else{
+    $("#"+id).hide();
+    }
+}
+function logout(){
+  localStorage.removeItem("Users");
+  localStorage.removeItem("Role");
+  location.href="index.html";
 }
