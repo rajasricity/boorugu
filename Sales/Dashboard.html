@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Boorugu</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="description" content="Avenger Admin Theme">
+    <meta name="author" content="Boorugu">
+
+    <link href='http://fonts.googleapis.com/css?family=RobotoDraft:300,400,400italic,500,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 10]>
+        <script type="text/javascript" src="assets/js/media.match.min.js"></script>
+        <script type="text/javascript" src="assets/js/placeholder.min.js"></script>
+    <![endif]-->
+
+    <link type="text/css" href="../assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">        <!-- Font Awesome -->
+    <link type="text/css" href="../assets/css/styles.css" rel="stylesheet">                                     <!-- Core CSS with allstyles -->
+    <link type="text/css" href="../assets/css/animate.css" rel="stylesheet">                                     <!-- Core CSS with all
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries. Placeholdr.js enables the placeholder attribute -->
+    <!--[if lt IE 9]>
+        <link type="text/css" href="assets/css/ie8.css" rel="stylesheet">
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/charts-flot/excanvas.min.js"></script>
+        <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- The following CSS are included as plugins and can be removed if unused-->
+    </head>
+
+    <body class="infobar-overlay sidebar-hideon-collpase sidebar-scroll">
+
+         <header id="topnav" class="navbar navbar-midnightblue navbar-fixed-top clearfix" role="banner">
+
+	<span id="trigger-sidebar" class="toolbar-trigger toolbar-icon-bg">
+		<a data-toggle="tooltips" data-placement="right" title="Toggle Sidebar"><span class="icon-bg"><i class="fa fa-fw fa-bars"></i></span></a>
+	</span>
+
+	<a class="" style="float: left;padding: 14px 16px;font-size: 25px;line-height: 23px;height: 48px;color:#fff" href="AdminDashboard.html">BOORUGU</a>
+	<ul class="nav navbar-nav toolbar pull-right">
+		<li class="dropdown toolbar-icon-bg">
+			<a href="#" class="hasnotifications dropdown-toggle" data-toggle='dropdown'><span class="icon-bg"><i class="fa fa-fw fa-bell"></i></span></a>
+			<div class="dropdown-menu dropdown-alternate notifications arrow">
+				<div class="dd-header">
+					<span>Notifications</span>
+					<span><a href="#">Settings</a></span>
+				</div>
+				<div class="scrollthis scroll-pane">
+					<ul class="scroll-content">
+						<li class="">
+							<a href="#" class="notification-info">
+								<div class="notification-icon"><i class="fa fa-user fa-fw"></i></div>
+								<div class="notification-content">Sample notifications</div>
+							</a>
+						</li>
+						<li class="">
+							<a href="#" class="notification-success">
+								<div class="notification-icon"><i class="fa fa-check fa-fw"></i></div>
+								<div class="notification-content">Sample notifications</div>
+							</a>
+						</li>
+						<li class="">
+							<a href="#" class="notification-primary">
+								<div class="notification-icon"><i class="fa fa-users fa-fw"></i></div>
+								<div class="notification-content">Sample notifications</div>
+							</a>
+						</li>
+						<li class="">
+							<a href="#" class="notification-danger">
+								<div class="notification-icon"><i class="fa fa-shopping-cart fa-fw"></i></div>
+								<div class="notification-content">Sample notifications</div>
+							</a>
+						</li>
+						<li class="">
+							<a href="#" class="notification-primary">
+								<div class="notification-icon"><i class="fa fa-arrow-up fa-fw"></i></div>
+								<div class="notification-content">Sample notifications</div>
+							</a>
+						</li>
+						<li class="">
+							<a href="#" class="notification-info">
+								<div class="notification-icon"><i class="fa fa-check fa-fw"></i></div>
+								<div class="notification-content">Sample notifications</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</li>
+		<li class="dropdown toolbar-icon-bg">
+			<a href="#" class="dropdown-toggle" data-toggle='dropdown'><span class="icon-bg"><i class="fa fa-fw fa-user"></i></span></a>
+			<ul class="dropdown-menu userinfo arrow">
+				<li><a href="#"><span class="pull-left">Change Password</span></a></li>
+				<li><a onclick="logout();"><span class="pull-left">Logout</span> <i class="pull-right fa fa-cog"></i></a></li>
+			</ul>
+		</li>
+
+	</ul>
+
+</header>
+
+        <div id="wrapper">
+            <div id="layout-static">
+                <div class="static-sidebar-wrapper sidebar-midnightblue">
+                    <div class="static-sidebar">
+                        <div class="sidebar">
+    <div class="widget stay-on-collapse" id="widget-welcomebox">
+        <div class="widget-body welcome-box tabular">
+            <div class="tabular-row">
+                <div class="tabular-cell welcome-avatar">
+                    <a href="#"><img src="../assets/img/customer.png" class="avatar"></a>
+                </div>
+                <div class="tabular-cell welcome-options">
+                    <span class="welcome-text">Welcome,</span>
+                    <a href="#" class="name">Admin</a>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="widget stay-on-collapse" id="widget-sidebar">
+        <nav role="navigation" class="widget-body">
+	<ul class="acc-menu" id="leftmenu">
+		<li class="nav-separator">Explore</li>
+		<li><a href="AdminDashboard.html"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
+		<li><a href="javascript:;"><i class="fa fa-file"></i><span>Orders</span></a>
+			<ul class="acc-menu">
+				<li><a href="#">Create</a></li>
+				<li><a href="#">View</a></li>
+			</ul>
+		</li>
+        <li><a href="javascript:;"><i class="fa fa-tags"></i><span>Reports</span></a></li>
+
+	</ul>
+</nav>
+    </div>
+</div>
+                    </div>
+                </div>
+                <div class="static-content-wrapper mybg">
+                    <div class="static-content ">
+                        <div class="page-content">
+                            <div class="container-fluid" style="padding:0px;">
+                            <div class="row">
+                            <div class="col-xs-12">
+        
+			
+<div class="panel panel-default" style="background-color: transparent !important;border: 0px;">
+	<div class="panel-body">
+		<div class="row">
+	<div class="col-xs-6">
+								<a href="#" class="shortcut-tile tile-magenta animated fadeIn">
+									<div class="tile-body">
+										<div class="pull-left"><i class="fa fa-file"></i></div>
+									</div>
+									<div class="tile-footer">
+										ORDERS
+									</div>
+								</a>
+	</div>
+                    <div class="col-xs-6">
+								<a href="#" class="shortcut-tile tile-midnightblue animated fadeIn">
+									<div class="tile-body">
+										<div class="pull-left"><i class="fa fa-users"></i></div>
+									</div>
+									<div class="tile-footer">
+										CUSTOMERS
+									</div>
+								</a>
+	                </div>
+	    </div>
+        <div class="row">
+                    <div class="col-xs-6">
+								<a href="#" class="shortcut-tile tile-info animated fadeIn">
+									<div class="tile-body">
+										<div class="pull-left"><i class="fa fa-tags"></i></div>
+									</div>
+									<div class="tile-footer">
+										REPORTS
+									</div>
+								</a>
+	                </div>
+        </div>
+
+	</div>
+</div>
+			
+		
+                            </div>
+                            </div>
+                            </div> <!-- .container-fluid -->
+                        </div> <!-- #page-content -->
+                    </div>
+<footer role="contentinfo" style="background-color: #CA5D67;height:35px;">
+    <div class="clearfix">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><h6 style="margin: 0;color:#fff;font-size: 16px;"> &copy; BOORUGU</h6></li>
+        </ul>
+        <button class="pull-right btn btn-link btn-xs hidden-print" id="back-to-top" style="color: #fff;font-size: 18px;"><i class="fa fa-arrow-up"></i></button>
+    </div>
+</footer>
+<div id="connectloader" class="modal fade" role="dialog" style="max-height:100%;" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content mybg" id="innbody" style="height:100%;">
+      <div class="modal-header">
+        <h4 class="modal-title"><center>Connection</center></h4>
+      </div>
+      <div class="modal-body">
+<br><br><br>
+<center><img src="../assets/img/noconnection.png" width="125" height="125" alt=""></center>
+<h5><center>No Connection, Please check</center></h5>
+<center><a class="btn btn-danger" href="javascript:location.reload();">RELOAD</button></a>
+      </div>
+    </div>
+
+  </div>
+</div>
+                </div>
+            </div>
+        </div>
+
+<script type="text/javascript" src="../assets/js/jquery-1.10.2.min.js"></script> 							<!-- Load jQuery -->
+<script type="text/javascript" src="../assets/js/jqueryui-1.9.2.min.js"></script> 							<!-- Load jQueryUI -->
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script> 								<!-- Load Bootstrap -->
+<script type="text/javascript" src="../assets/js/enquire.min.js"></script> 									<!-- Enquire for Responsiveness -->
+<script type="text/javascript" src="../assets/plugins/nanoScroller/js/jquery.nanoscroller.min.js"></script> <!-- nano scroller -->
+<script type="text/javascript" src="../assets/plugins/jquery-mousewheel/jquery.mousewheel.min.js"></script> 	<!-- Mousewheel support needed for jScrollPane -->
+<script type="text/javascript" src="../assets/js/application.js"></script>
+<script type="text/javascript" src="custom.js"></script>
+<script language="javascript">
+$(document).ready(function () {
+
+});
+</script>
+    </body>
+</html>
