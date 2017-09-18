@@ -194,14 +194,12 @@
     <div class="panel-body no-padding">
 <form id="ordercreate" onSubmit="document.getElementById('submit').disabled=true;">
 <table class="table table-bordered">
-<tr><td>
-    <select name="customer" id="customer" class="form-control" required>
+<tr><td><br>
+<select name="industryorder" id="industryorder" class="form-control" onchange="showOrderForm(this.value),ShowCustomers(this.value);" required></select><br>
+    <select name="customer" id="cus" class="form-control" required>
         <option value="">SELECT CUSTOMER</option>
     </select>
     <input type="hidden" name="cby" value='' id="cby"/>
-</td></tr>
-<tr><td>
-    <select name="industryorder" id="industryorder" class="form-control" onchange="showOrderForm(this.value);" required></select>
 </td></tr>
 </table>
 <div class="table-responsive" style="padding-bottom:20px;">
@@ -270,6 +268,12 @@ var server = "http://mukthasis.com/boorugu/";
 $(document).ready(function () {
 $("#inds").load(server+"allindustries.php");
 });
+</script>
+<script>
+function showAmt(id){
+var amt = ($("#"+id+"price").val())*($("#"+id+"qty").val());
+$("#"+id+"amt").val(amt);
+}
 </script>
     </body>
 </html>
