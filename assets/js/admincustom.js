@@ -247,8 +247,11 @@ function connection(){
 
 function showOrderForm(inds){
   if(inds != ''){
+    var fdata = {"inds":inds};
    $.ajax({
       url:server+"orderform.php",
+      data:fdata,
+      type:"post",
       success: function(str){
         $("#oform").html(str);
       }
@@ -271,4 +274,16 @@ function logout(){
 function showOrder(oid){
 localStorage.setItem("Order",oid);
  location.href="ViewOrder.html";
+}
+
+function ShowCustomers(ind){
+  var fdata={"ind":ind};
+  $.ajax({
+     url:server+"showCustomers.php",
+     data:fdata,
+     type:"post",
+     success: function(str){
+       $("#cus").html(str);
+     }
+  });
 }
