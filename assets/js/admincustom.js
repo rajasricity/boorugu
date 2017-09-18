@@ -3,6 +3,7 @@ $(function(){
 connection();
 //localStorage.removeItem("User");
 //localStorage.removeItem("Role");
+$("#order").load(server+"loadOrder.php?oid="+localStorage.getItem("Order"));
 if(localStorage.getItem('User') && localStorage.getItem("Role")){
 
 }else{
@@ -193,19 +194,15 @@ $("#orders tbody").html("");
 var url2 = server+"orders.php";
 $.getJSON(url2,function(data){
    $.each(data.users, function(i,user){
-      var newRow=
-      "<tr>"
+     var newRow=
+      "<tr onclick='showOrder(\""+user.OrderId+"\");'>"
       +"<td>"+(i+1)+"</td>"
       +"<td>"+user.OrderId+"</td>"
       +"<td>"+user.CreateBy+"</td>"
       +"<td>"+user.Division+"</td>"
       +"<td>"+user.Customer+"</td>"
       +"<td>"+user.Industry+"</td>"
-      +"<td>"+user.Product+"</td>"
-      +"<td>"+user.Pid+"</td>"
-      +"<td>"+user.Price+"</td>"
-      +"<td>"+user.Qty+"</td>"
-      +"<td>"+user.Amount+"</td>"
+      +"<td align='right'>"+user.Amount+"</td>"
       +"</tr>";
       $(newRow).appendTo("#orders tbody");
    });
@@ -270,4 +267,8 @@ function logout(){
   localStorage.removeItem("Users");
   localStorage.removeItem("Role");
   location.href="index.html";
+}
+function showOrder(oid){
+localStorage.setItem("Order",oid);
+ location.href="ViewOrder.html";
 }
