@@ -20,7 +20,8 @@
 
     <link type="text/css" href="../assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">        <!-- Font Awesome -->
     <link type="text/css" href="../assets/css/styles.css" rel="stylesheet">                                     <!-- Core CSS with allstyles -->
-    <link type="text/css" href="../assets/css/animate.css" rel="stylesheet">                                     <!-- Core CSS with all
+    <link type="text/css" href="../assets/css/animate.css" rel="stylesheet">                                     <!-- Core CSS with all -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/select.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries. Placeholdr.js enables the placeholder attribute -->
     <!--[if lt IE 9]>
@@ -41,8 +42,11 @@
 		<a data-toggle="tooltips" data-placement="right" title="Toggle Sidebar"><span class="icon-bg"><i class="fa fa-fw fa-bars"></i></span></a>
 	</span>
 
-	<a class="" style="float: left;padding: 14px 16px;font-size: 25px;line-height: 23px;height: 48px;color:#fff" href="AdminDashboard.html">BOORUGU</a>
+	<a class="" style="float: left;padding: 14px 16px;font-size: 25px;line-height: 23px;height: 48px;color:#fff" href="Dashboard.html">BOORUGU</a>
 	<ul class="nav navbar-nav toolbar pull-right">
+        <li class="dropdown toolbar-icon-bg">
+        <a href="javascript:window.history.back();"><span class="icon-bg"><i class="fa fa-fw fa-arrow-left"></i></span></a>
+        </li>
 		<li class="dropdown toolbar-icon-bg">
 			<a href="#" class="hasnotifications dropdown-toggle" data-toggle='dropdown'><span class="icon-bg"><i class="fa fa-fw fa-bell"></i></span></a>
 			<div class="dropdown-menu dropdown-alternate notifications arrow">
@@ -52,6 +56,7 @@
 				</div>
 				<div class="scrollthis scroll-pane">
 					<ul class="scroll-content">
+
 						<li class="">
 							<a href="#" class="notification-info">
 								<div class="notification-icon"><i class="fa fa-user fa-fw"></i></div>
@@ -99,7 +104,6 @@
 				<li><a onclick="logout();"><span class="pull-left">Logout</span> <i class="pull-right fa fa-cog"></i></a></li>
 			</ul>
 		</li>
-
 	</ul>
 
 </header>
@@ -123,10 +127,10 @@
         </div>
     </div>
 	<div class="widget stay-on-collapse" id="widget-sidebar">
-        <nav role="navigation" class="widget-body">
+         <nav role="navigation" class="widget-body">
 	<ul class="acc-menu" id="leftmenu">
 		<li class="nav-separator">Explore</li>
-		<li><a href="AdminDashboard.html"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
+		<li><a href="Dashboard.html"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
 		<li><a href="javascript:;"><i class="fa fa-file"></i><span>Orders</span></a>
 			<ul class="acc-menu">
 				<li><a href="CreateOrder.html">Create</a></li>
@@ -151,29 +155,38 @@
 			
 <div class="panel panel-default" style="background-color: transparent !important;border: 0px;">
 	<div class="panel-body">
-		<div class="row">
-	<div class="col-xs-6">
-								<a href="CreateOrder.html" class="shortcut-tile tile-magenta animated fadeIn">
-									<div class="tile-body">
-										<div class="pull-left"><i class="fa fa-file"></i></div>
-									</div>
-									<div class="tile-footer">
-										ORDERS
-									</div>
-								</a>
-	</div>
-	<div class="col-xs-6">
-								<a href="#" class="shortcut-tile tile-midnightblue animated fadeIn">
-									<div class="tile-body">
-										<div class="pull-left"><i class="fa fa-tags"></i></div>
-									</div>
-									<div class="tile-footer">
-										REPORTS
-									</div>
-								</a>
-	</div>
-		</div>
+		
 
+		
+
+		<div class="row">
+	                <div class="col-xs-12">
+<div class="panel panel-danger animated fadeIn" style="border:0px">
+    <div class="panel-heading">
+        <div class="panel-title"><i class="fa fa-file"></i> CREATE ORDER</div>
+    </div>
+    <div class="panel-body no-padding">
+<form id="ordercreate" onSubmit="document.getElementById('submit').disabled=true;">
+<table class="table table-bordered">
+<tr><td>
+<input type="hidden" name="cby" value='' id="cby"/>
+  <select name="industryorder" id="industryorder" class="form-control" onchange="showOrderForm(this.value);" required></select>
+</td></tr>
+</table>
+<div class="table-responsive" style="padding-bottom:20px;">
+<table class="table table-bordered" id="oform" style="width:900px"></table>
+</div>
+    <img src="../assets/img/preloader.gif" width="40" height="40" alt="" style="display:none" id="ploader">
+    <input type="submit" name="customer" id="submit" value="Create Product" class="btn btn-danger pull-right btn-lg"/>
+</form>
+<br><br>
+<div class="alert alert-success" style="margin-top:20px;display:none" id="smsg">Successfully Created</div>
+    </div>
+</div>
+
+<a href="Orders.html" class="btn btn-danger btn-lg" style="width:100%"><i class="fa fa-eye"></i> LIST OF ORDERS</a>
+                	</div>
+			</div>
 	</div>
 </div>
 			
@@ -218,13 +231,20 @@
 <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script> 								<!-- Load Bootstrap -->
 <script type="text/javascript" src="../assets/js/enquire.min.js"></script> 									<!-- Enquire for Responsiveness -->
 <script type="text/javascript" src="../assets/plugins/nanoScroller/js/jquery.nanoscroller.min.js"></script> <!-- nano scroller -->
-<script type="text/javascript" src="../assets/plugins/jquery-mousewheel/jquery.mousewheel.min.js"></script> 	<!-- Mousewheel support needed for jScrollPane -->
+<script type="text/javascript" src="../assets/plugins/jquery-mousewheel/jquery.mousewheel.min.js"></script>
 <script type="text/javascript" src="../assets/js/application.js"></script>
 <script type="text/javascript" src="custom.js"></script>
 <script language="javascript">
+
 $(document).ready(function () {
 
 });
+</script>
+<script>
+function showAmt(id){
+var amt = ($("#"+id+"price").val())*($("#"+id+"qty").val());
+$("#"+id+"amt").val(amt);
+}
 </script>
     </body>
 </html>

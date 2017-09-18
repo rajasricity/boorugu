@@ -35,14 +35,17 @@
 
     <body class="infobar-overlay sidebar-hideon-collpase sidebar-scroll">
 
-         <header id="topnav" class="navbar navbar-midnightblue navbar-fixed-top clearfix" role="banner">
+        <header id="topnav" class="navbar navbar-midnightblue navbar-fixed-top clearfix" role="banner">
 
 	<span id="trigger-sidebar" class="toolbar-trigger toolbar-icon-bg">
 		<a data-toggle="tooltips" data-placement="right" title="Toggle Sidebar"><span class="icon-bg"><i class="fa fa-fw fa-bars"></i></span></a>
 	</span>
 
-	<a class="" style="float: left;padding: 14px 16px;font-size: 25px;line-height: 23px;height: 48px;color:#fff" href="AdminDashboard.html">BOORUGU</a>
+	<a class="" style="float: left;padding: 14px 16px;font-size: 25px;line-height: 23px;height: 48px;color:#fff" href="Dashboard.html">BOORUGU</a>
 	<ul class="nav navbar-nav toolbar pull-right">
+        <li class="dropdown toolbar-icon-bg">
+        <a href="javascript:window.history.back();"><span class="icon-bg"><i class="fa fa-fw fa-arrow-left"></i></span></a>
+        </li>
 		<li class="dropdown toolbar-icon-bg">
 			<a href="#" class="hasnotifications dropdown-toggle" data-toggle='dropdown'><span class="icon-bg"><i class="fa fa-fw fa-bell"></i></span></a>
 			<div class="dropdown-menu dropdown-alternate notifications arrow">
@@ -52,6 +55,7 @@
 				</div>
 				<div class="scrollthis scroll-pane">
 					<ul class="scroll-content">
+
 						<li class="">
 							<a href="#" class="notification-info">
 								<div class="notification-icon"><i class="fa fa-user fa-fw"></i></div>
@@ -99,7 +103,6 @@
 				<li><a onclick="logout();"><span class="pull-left">Logout</span> <i class="pull-right fa fa-cog"></i></a></li>
 			</ul>
 		</li>
-
 	</ul>
 
 </header>
@@ -123,10 +126,10 @@
         </div>
     </div>
 	<div class="widget stay-on-collapse" id="widget-sidebar">
-        <nav role="navigation" class="widget-body">
+         <nav role="navigation" class="widget-body">
 	<ul class="acc-menu" id="leftmenu">
 		<li class="nav-separator">Explore</li>
-		<li><a href="AdminDashboard.html"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
+		<li><a href="Dashboard.html"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
 		<li><a href="javascript:;"><i class="fa fa-file"></i><span>Orders</span></a>
 			<ul class="acc-menu">
 				<li><a href="CreateOrder.html">Create</a></li>
@@ -152,28 +155,20 @@
 <div class="panel panel-default" style="background-color: transparent !important;border: 0px;">
 	<div class="panel-body">
 		<div class="row">
-	<div class="col-xs-6">
-								<a href="CreateOrder.html" class="shortcut-tile tile-magenta animated fadeIn">
-									<div class="tile-body">
-										<div class="pull-left"><i class="fa fa-file"></i></div>
-									</div>
-									<div class="tile-footer">
-										ORDERS
-									</div>
-								</a>
-	</div>
-	<div class="col-xs-6">
-								<a href="#" class="shortcut-tile tile-midnightblue animated fadeIn">
-									<div class="tile-body">
-										<div class="pull-left"><i class="fa fa-tags"></i></div>
-									</div>
-									<div class="tile-footer">
-										REPORTS
-									</div>
-								</a>
-	</div>
-		</div>
+	                <div class="col-xs-12">
+<div class="panel panel-danger" style="border:0px">
+    <div class="panel-heading">
+        <div class="panel-title"><i class="fa fa-file-o"></i> ORDER</div>
+    </div>
+    <div class="panel-body no-padding">
+<div class="table-responsive" style="padding-bottom:20px;">
+    <div id="order"></div>
+</div>
+    </div>
+</div>
 
+                	</div>
+			</div>
 	</div>
 </div>
 			
@@ -218,7 +213,7 @@
 <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script> 								<!-- Load Bootstrap -->
 <script type="text/javascript" src="../assets/js/enquire.min.js"></script> 									<!-- Enquire for Responsiveness -->
 <script type="text/javascript" src="../assets/plugins/nanoScroller/js/jquery.nanoscroller.min.js"></script> <!-- nano scroller -->
-<script type="text/javascript" src="../assets/plugins/jquery-mousewheel/jquery.mousewheel.min.js"></script> 	<!-- Mousewheel support needed for jScrollPane -->
+<script type="text/javascript" src="../assets/plugins/jquery-mousewheel/jquery.mousewheel.min.js"></script> <!-- Mousewheel support needed for jScrollPane -->
 <script type="text/javascript" src="../assets/js/application.js"></script>
 <script type="text/javascript" src="custom.js"></script>
 <script language="javascript">
