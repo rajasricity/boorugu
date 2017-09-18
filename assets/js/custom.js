@@ -78,7 +78,7 @@ if(localStorage.getItem("User")){
            success: function(str){
            $("#ploader").hide();
            if(str != '0'){
-             localStorage.setItem("User",str.CustomerId);
+             localStorage.setItem("User",str.SalesId);
              localStorage.setItem("Role","Sales");
              location.href='Sales/Dashboard.html';
            }else{
