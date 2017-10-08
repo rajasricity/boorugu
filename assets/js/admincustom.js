@@ -1,9 +1,10 @@
-var server = "http://mukthasis.com/boorugu/";
+var server = localStorage.getItem("Server");
 $(function(){
 connection();
-//localStorage.removeItem("User");
-//localStorage.removeItem("Role");
-$("#order").load(server+"loadOrder.php?oid="+localStorage.getItem("Order"));
+$("#inds").load(server+"allindustries.php");
+$("#industryorder").load(server+"allindustries.php");
+$("#notifications").load(server+"notifications.php");
+$("#leftmenu").load(server+"adminleft.php");
 if(localStorage.getItem('User') && localStorage.getItem("Role")){
 
 }else{
@@ -90,7 +91,7 @@ if(localStorage.getItem('User') && localStorage.getItem("Role")){
     $("#cby").val(localStorage.getItem("User"));
      var fdata = $("#ordercreate").serialize();
      $.ajax({
-        url:server+"ordercreate.php",
+        url:server+"previewOrder.php",
         data:fdata,
         type:"post",
         beforeSend:function(){
@@ -98,9 +99,7 @@ if(localStorage.getItem('User') && localStorage.getItem("Role")){
         },
         success: function(str){
           $("#ploader").hide();
-          $("#smsg").show();
-          $("#ordercreate")[0].reset();
-          $("#submit").prop('disabled',false);
+          $("#preview").html(str);
         },
         error: function(xhr){
            alert('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);
@@ -108,21 +107,21 @@ if(localStorage.getItem('User') && localStorage.getItem("Role")){
      });
   });
 
-var url = server+"employeesList.php";
-$("#emps tbody").html("");
-$.getJSON(url,function(data){
-   $.each(data.users, function(i,user){
-      var newRow=
-      "<tr>"
-      +"<td>"+(i+1)+"</td>"
-      +"<td>"+user.Name+"</td>"
-      +"<td>"+user.Designation+"</td>"
-      +"<td>"+user.Mobile+"</td>"
-      +"<td>"+atob(user.Password)+"</td>"
-      +"</tr>";
-      $(newRow).appendTo("#emps tbody");
-   });
-});
+  // var url = server+"employeesList.php";
+// $("#emps tbody").html("");
+// $.getJSON(url,function(data){
+//    $.each(data.users, function(i,user){
+//       var newRow=
+//       "<tr>"
+//       +"<td>"+(i+1)+"</td>"
+//       +"<td>"+user.Name+"</td>"
+//       +"<td>"+user.Designation+"</td>"
+//       +"<td>"+user.Mobile+"</td>"
+//       +"<td>"+atob(user.Password)+"</td>"
+//       +"</tr>";
+//       $(newRow).appendTo("#emps tbody");
+//    });
+// });
 
 $("#industry tbody").html("");
 var url1 = server+"industries.php";
@@ -137,76 +136,76 @@ $.getJSON(url1,function(data){
    });
 });
 
-$("#customers tbody").html("");
-var url2 = server+"customers.php";
-$.getJSON(url2,function(data){
-   $.each(data.users, function(i,user){
-      var newRow=
-      "<tr>"
-      +"<td>"+(i+1)+"</td>"
-      +"<td>"+user.Name+"</td>"
-      +"<td>"+user.Type+"</td>"
-      +"<td>"+"BPMC0"+user.Sno+"</td>"
-      +"<td>"+atob(user.Password)+"</td>"
-      +"<td>"+user.Address1+","+user.Address2+"</td>"
-      +"<td>"+user.City+"</td>"
-      +"<td>"+user.State+"</td>"
-      +"<td>"+user.StateCode+"</td>"
-      +"<td>"+user.Phone+"</td>"
-      +"<td>"+user.Fax+"</td>"
-      +"<td>"+user.Email+"</td>"
-      +"<td>"+user.Cperson+"</td>"
-      +"<td>"+user.Cpdesignation+"</td>"
-      +"<td>"+user.Cpemail+"</td>"
-      +"<td>"+user.Pan+"</td>"
-      +"<td>"+user.Gst+"</td>"
-      +"<td>"+user.Plist+"</td>"
-      +"<td>"+user.Industry+"</td>"
-      +"</tr>";
-      $(newRow).appendTo("#customers tbody");
-   });
-});
+// $("#customers tbody").html("");
+// var url2 = server+"customers.php";
+// $.getJSON(url2,function(data){
+//    $.each(data.users, function(i,user){
+//       var newRow=
+//       "<tr>"
+//       +"<td>"+(i+1)+"</td>"
+//       +"<td>"+user.Name+"</td>"
+//       +"<td>"+user.Type+"</td>"
+//       +"<td>"+"BPMC0"+user.Sno+"</td>"
+//       +"<td>"+atob(user.Password)+"</td>"
+//       +"<td>"+user.Address1+","+user.Address2+"</td>"
+//       +"<td>"+user.City+"</td>"
+//       +"<td>"+user.State+"</td>"
+//       +"<td>"+user.StateCode+"</td>"
+//       +"<td>"+user.Phone+"</td>"
+//       +"<td>"+user.Fax+"</td>"
+//       +"<td>"+user.Email+"</td>"
+//       +"<td>"+user.Cperson+"</td>"
+//       +"<td>"+user.Cpdesignation+"</td>"
+//       +"<td>"+user.Cpemail+"</td>"
+//       +"<td>"+user.Pan+"</td>"
+//       +"<td>"+user.Gst+"</td>"
+//       +"<td>"+user.Plist+"</td>"
+//       +"<td>"+user.Industry+"</td>"
+//       +"</tr>";
+//       $(newRow).appendTo("#customers tbody");
+//    });
+// });
 
-$("#products tbody").html("");
-var url2 = server+"products.php";
-$.getJSON(url2,function(data){
-   $.each(data.users, function(i,user){
-      var newRow=
-      "<tr>"
-      +"<td>"+(i+1)+"</td>"
-      +"<td>"+user.ProductId+"</td>"
-      +"<td>"+user.Name+"</td>"
-      +"<td>"+user.Supplier+"</td>"
-      +"<td>"+user.Uom+"</td>"
-      +"<td>"+user.HsnCode+"</td>"
-      +"<td>"+user.Tax+"</td>"
-      +"<td>"+user.AdjustmentPrice+"</td>"
-      +"<td>"+user.MinQty+"</td>"
-      +"<td>"+user.Emails+"</td>"
-      +"<td>"+user.Commoditive+"</td>"
-      +"<td>"+user.Industry+"</td>"
-      +"</tr>";
-      $(newRow).appendTo("#products tbody");
-   });
-});
+// $("#products tbody").html("");
+// var url2 = server+"products.php";
+// $.getJSON(url2,function(data){
+//    $.each(data.users, function(i,user){
+//       var newRow=
+//       "<tr>"
+//       +"<td>"+(i+1)+"</td>"
+//       +"<td>"+user.ProductId+"</td>"
+//       +"<td>"+user.Name+"</td>"
+//       +"<td>"+user.Supplier+"</td>"
+//       +"<td>"+user.Uom+"</td>"
+//       +"<td>"+user.HsnCode+"</td>"
+//       +"<td>"+user.Tax+"</td>"
+//       +"<td>"+user.AdjustmentPrice+"</td>"
+//       +"<td>"+user.MinQty+"</td>"
+//       +"<td>"+user.Emails+"</td>"
+//       +"<td>"+user.Commoditive+"</td>"
+//       +"<td>"+user.Industry+"</td>"
+//       +"</tr>";
+//       $(newRow).appendTo("#products tbody");
+//    });
+// });
 
-$("#orders tbody").html("");
-var url2 = server+"orders.php";
-$.getJSON(url2,function(data){
-   $.each(data.users, function(i,user){
-     var newRow=
-      "<tr onclick='showOrder(\""+user.OrderId+"\");'>"
-      +"<td>"+(i+1)+"</td>"
-      +"<td>"+user.OrderId+"</td>"
-      +"<td>"+user.CreateBy+"</td>"
-      +"<td>"+user.Division+"</td>"
-      +"<td>"+user.Customer+"</td>"
-      +"<td>"+user.Industry+"</td>"
-      +"<td align='right'>"+user.Amount+"</td>"
-      +"</tr>";
-      $(newRow).appendTo("#orders tbody");
-   });
-});
+// $("#orders tbody").html("");
+// var url2 = server+"orders.php";
+// $.getJSON(url2,function(data){
+//    $.each(data.users, function(i,user){
+//      var newRow=
+//       "<tr onclick='showOrder(\""+user.OrderId+"\");'>"
+//       +"<td>"+(i+1)+"</td>"
+//       +"<td>"+user.OrderId+"</td>"
+//       +"<td>"+user.CreateBy+"</td>"
+//       +"<td>"+user.Division+"</td>"
+//       +"<td>"+user.Customer+"</td>"
+//       +"<td>"+user.Industry+"</td>"
+//       +"<td align='right'>"+user.Amount+"</td>"
+//       +"</tr>";
+//       $(newRow).appendTo("#orders tbody");
+//    });
+// });
 
 var url3 = server+"customerlist.php";
 $("#customer").html("");

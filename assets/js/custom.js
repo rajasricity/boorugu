@@ -1,4 +1,6 @@
-var server = "http://mukthasis.com/boorugu/";
+//localStorage.setItem("Server","http://localhost/boorugu/");
+localStorage.setItem("Server","http://boorugu.in/boorugu/");
+var server = localStorage.getItem("Server");
 $(function(){
 connection();
 if(localStorage.getItem("User")){
