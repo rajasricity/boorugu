@@ -20,6 +20,7 @@
 
     <link type="text/css" href="../assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">        <!-- Font Awesome -->
     <link type="text/css" href="../assets/css/styles.css" rel="stylesheet">                                     <!-- Core CSS with allstyles -->
+    <link type="text/css" href="../assets/css/datatable.css" rel="stylesheet">
     <link type="text/css" href="../assets/css/animate.css" rel="stylesheet">                                     <!-- Core CSS with all
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries. Placeholdr.js enables the placeholder attribute -->
@@ -53,46 +54,7 @@
 					<span>Notifications</span>
 					<span><a href="#">Settings</a></span>
 				</div>
-				<div class="scrollthis scroll-pane">
-					<ul class="scroll-content">
-
-						<li class="">
-							<a href="#" class="notification-info">
-								<div class="notification-icon"><i class="fa fa-user fa-fw"></i></div>
-								<div class="notification-content">Sample notifications</div>
-							</a>
-						</li>
-						<li class="">
-							<a href="#" class="notification-success">
-								<div class="notification-icon"><i class="fa fa-check fa-fw"></i></div>
-								<div class="notification-content">Sample notifications</div>
-							</a>
-						</li>
-						<li class="">
-							<a href="#" class="notification-primary">
-								<div class="notification-icon"><i class="fa fa-users fa-fw"></i></div>
-								<div class="notification-content">Sample notifications</div>
-							</a>
-						</li>
-						<li class="">
-							<a href="#" class="notification-danger">
-								<div class="notification-icon"><i class="fa fa-shopping-cart fa-fw"></i></div>
-								<div class="notification-content">Sample notifications</div>
-							</a>
-						</li>
-						<li class="">
-							<a href="#" class="notification-primary">
-								<div class="notification-icon"><i class="fa fa-arrow-up fa-fw"></i></div>
-								<div class="notification-content">Sample notifications</div>
-							</a>
-						</li>
-						<li class="">
-							<a href="#" class="notification-info">
-								<div class="notification-icon"><i class="fa fa-check fa-fw"></i></div>
-								<div class="notification-content">Sample notifications</div>
-							</a>
-						</li>
-					</ul>
+				<div id="notifications">
 				</div>
 			</div>
 		</li>
@@ -128,21 +90,6 @@
 	<div class="widget stay-on-collapse" id="widget-sidebar">
          <nav role="navigation" class="widget-body">
 	<ul class="acc-menu" id="leftmenu">
-		<li class="nav-separator">Explore</li>
-		<li><a href="Dashboard.html"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
-		<li><a href="javascript:;"><i class="fa fa-file"></i><span>Orders</span></a>
-			<ul class="acc-menu">
-				<li><a href="CreateOrder.html">Create</a></li>
-				<li><a href="Orders.html">View</a></li>
-			</ul>
-		</li>
-        <li><a href="javascript:;"><i class="fa fa-file"></i><span>Customers</span></a>
-			<ul class="acc-menu">
-				<li><a href="CreateCustomer.html">Create</a></li>
-				<li><a href="Customers.html">View</a></li>
-			</ul>
-		</li>
-        <li><a href="javascript:;"><i class="fa fa-tags"></i><span>Reports</span></a></li>
 
 	</ul>
 </nav>
@@ -168,10 +115,10 @@
     </div>
     <div class="panel-body no-padding">
 <div class="table-responsive" style="padding-bottom:20px;">
-<table class="table" id="orders_sales">
+<table class="table" id="my-example">
     <thead>
         <tr>
-            <th>Sno</th><th>Order Id</th><th>Create By</th><th>Division</th><th>Customer</th><th>Industry</th><th>Order Amount</th>
+            <th>Sno</th><th>Order Id</th><th>Create By</th><th>Division</th><th>Customer</th><th>Industry</th><th style="text-align: right;">Amount</th>
         </tr>
     </thead>
     <tbody>
@@ -231,8 +178,26 @@
 <script type="text/javascript" src="../assets/plugins/jquery-mousewheel/jquery.mousewheel.min.js"></script> <!-- Mousewheel support needed for jScrollPane -->
 <script type="text/javascript" src="../assets/js/application.js"></script>
 <script type="text/javascript" src="custom.js"></script>
+<script type="text/javascript" src="../assets/js/datatables.js"></script>
 <script language="javascript">
 $(document).ready(function () {
+$('#my-example').dataTable({
+        "bProcessing": true,
+        "sAjaxSource": localStorage.getItem("Server")+"OrdersSales.php?cid="+localStorage.getItem("User"),
+        "bSort":false,
+        "aoColumns": [
+              { mData: 'Sno' } ,
+              { mData: 'OrderId' },
+              { mData: 'CreateBy' },
+              { mData: 'Division' },
+              { mData: 'Customer' },
+              { mData: 'Industry' },
+              { mData: 'Amount'}
+            ]
+      });
+$('.dataTable').on('dblclick', 'tbody tr', function() {
+  showOrder($(this).children('td:first-child').text());
+});
 
 });
 </script>

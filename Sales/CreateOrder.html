@@ -54,46 +54,7 @@
 					<span>Notifications</span>
 					<span><a href="#">Settings</a></span>
 				</div>
-				<div class="scrollthis scroll-pane">
-					<ul class="scroll-content">
-
-						<li class="">
-							<a href="#" class="notification-info">
-								<div class="notification-icon"><i class="fa fa-user fa-fw"></i></div>
-								<div class="notification-content">Sample notifications</div>
-							</a>
-						</li>
-						<li class="">
-							<a href="#" class="notification-success">
-								<div class="notification-icon"><i class="fa fa-check fa-fw"></i></div>
-								<div class="notification-content">Sample notifications</div>
-							</a>
-						</li>
-						<li class="">
-							<a href="#" class="notification-primary">
-								<div class="notification-icon"><i class="fa fa-users fa-fw"></i></div>
-								<div class="notification-content">Sample notifications</div>
-							</a>
-						</li>
-						<li class="">
-							<a href="#" class="notification-danger">
-								<div class="notification-icon"><i class="fa fa-shopping-cart fa-fw"></i></div>
-								<div class="notification-content">Sample notifications</div>
-							</a>
-						</li>
-						<li class="">
-							<a href="#" class="notification-primary">
-								<div class="notification-icon"><i class="fa fa-arrow-up fa-fw"></i></div>
-								<div class="notification-content">Sample notifications</div>
-							</a>
-						</li>
-						<li class="">
-							<a href="#" class="notification-info">
-								<div class="notification-icon"><i class="fa fa-check fa-fw"></i></div>
-								<div class="notification-content">Sample notifications</div>
-							</a>
-						</li>
-					</ul>
+				<div id="notifications">
 				</div>
 			</div>
 		</li>
@@ -129,21 +90,6 @@
 	<div class="widget stay-on-collapse" id="widget-sidebar">
         <nav role="navigation" class="widget-body">
 	<ul class="acc-menu" id="leftmenu">
-		<li class="nav-separator">Explore</li>
-		<li><a href="Dashboard.html"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
-		<li><a href="javascript:;"><i class="fa fa-file"></i><span>Orders</span></a>
-			<ul class="acc-menu">
-				<li><a href="CreateOrder.html">Create</a></li>
-				<li><a href="Orders.html">View</a></li>
-			</ul>
-		</li>
-        <li><a href="javascript:;"><i class="fa fa-users"></i><span>Customers</span></a>
-			<ul class="acc-menu">
-				<li><a href="CreateCustomer.html">Create</a></li>
-				<li><a href="Customers.html">View</a></li>
-			</ul>
-		</li>
-        <li><a href="javascript:;"><i class="fa fa-tags"></i><span>Reports</span></a></li>
 
 	</ul>
 </nav>
@@ -171,14 +117,18 @@
     <div class="panel-heading">
         <div class="panel-title"><i class="fa fa-file"></i> CREATE ORDER</div>
     </div>
-    <div class="panel-body no-padding">
+    <div class="panel-body">
+    <div id="preview">
 <form id="ordercreate" onSubmit="document.getElementById('submit').disabled=true;">
 <table class="table table-bordered">
 <tr><td>
-<input type="hidden" name="cby" value='' id="cby"/>
   <select name="industryorder" id="industryorder" class="form-control" onchange="showOrderForm(this.value),ShowCustomers(this.value);" required></select>
   <br>
-  <select name="customer" id="cus" class="form-control" required></select>
+  <select name="customer" id="cus" class="form-control" required></select><br>
+  Delivery Date
+    <input type="date" name="deldate" class="form-control" required="required"/><br>
+    <input type="text" name="transport" class="form-control" placeholder="Transport" />
+    <input type="hidden" name="cby" value='' id="cby"/>
 </td></tr>
 </table>
 <div class="table-responsive" style="padding-bottom:20px;">
@@ -189,6 +139,7 @@
 </form>
 <br><br>
 <div class="alert alert-success" style="margin-top:20px;display:none" id="smsg">Successfully Created</div>
+    </div>
     </div>
 </div>
 
@@ -245,13 +196,26 @@
 <script language="javascript">
 
 $(document).ready(function () {
-
+$("#industryorder").load(localStorage.getItem("Server")+"industriessales.php?cid="+localStorage.getItem("User"));
+$("#cby").val(localStorage.getItem("User"));
 });
 </script>
 <script>
 function showAmt(id){
 var amt = ($("#"+id+"price").val())*($("#"+id+"qty").val());
-$("#"+id+"amt").val(amt);
+var net = ((parseFloat(amt))*(parseFloat($("#"+id+"tax").val())))/100;
+$("#"+id+"amt").val(amt.toFixed(3));
+//alert(net+amt);
+$("#"+id+"net").val((amt+net).toFixed(3));
+}
+</script>
+<script>
+function showAmt(id){
+var amt = ($("#"+id+"price").val())*($("#"+id+"qty").val());
+var net = ((parseFloat(amt))*(parseFloat($("#"+id+"tax").val())))/100;
+$("#"+id+"amt").val(amt.toFixed(3));
+//alert(net+amt);
+$("#"+id+"net").val((amt+net).toFixed(3));
 }
 </script>
     </body>

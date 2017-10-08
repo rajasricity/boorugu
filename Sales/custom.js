@@ -1,14 +1,16 @@
-var server = "http://mukthasis.com/boorugu/";
+var server = localStorage.getItem("Server");
 $(function(){
 connection();
 $("#innbody").css("height",$( window ).height()-20);
 $("#order").load(server+"loadOrder.php?oid="+localStorage.getItem("Order"));
+$("#notifications").load(server+"notificationssales.php");
+$("#leftmenu").load(server+"leftsales.php");
 $("#ordercreate").on('submit', function(e){
     e.preventDefault();
     $("#cby").val(localStorage.getItem("User"));
      var fdata = $("#ordercreate").serialize();
      $.ajax({
-        url:server+"ordercreate_sales.php",
+        url:server+"previewOrderSales.php",
         data:fdata,
         type:"post",
         beforeSend:function(){
@@ -16,9 +18,7 @@ $("#ordercreate").on('submit', function(e){
         },
         success: function(str){
           $("#ploader").hide();
-          $("#smsg").show();
-          $("#ordercreate")[0].reset();
-          $("#submit").prop('disabled',false);
+          $("#preview").html(str);
         },
         error: function(xhr){
            alert('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);
@@ -63,18 +63,6 @@ $.getJSON(url2,function(data){
       +"<td align='right'>"+user.Amount+"</td>"
       +"</tr>";
       $(newRow).appendTo("#orders_sales tbody");
-   });
-});
-
-var url4 = server+"industries.php";
-$("#industryorder").html("");
-var newRow= "<option value=''>SELECT INDUSTRY</option>";
-$(newRow).appendTo("#industryorder");
-$.getJSON(url4,function(data){
-   $.each(data.users, function(i,indus){
-      var newRow=
-      "<option value='"+indus.Sno+"'>"+indus.Industry+"</option>";
-      $(newRow).appendTo("#industryorder");
    });
 });
 
