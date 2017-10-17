@@ -118,12 +118,12 @@
 <table class="table table-bordered">
 <tr><td><br>
 <select name="industryorder" id="industryorder" class="form-control" onchange="showOrderForm(this.value),ShowCustomers(this.value);" required></select><br>
-    <select name="customer" id="cus" class="form-control" required>
+    <select name="customer" id="cus" class="form-control" onchange="showTransport(this.value);" required>
         <option value="">SELECT CUSTOMER</option>
     </select><br>
     Delivery Date
-    <input type="date" name="deldate" class="form-control" required="required"/><br>
-    <input type="text" name="transport" class="form-control" placeholder="Transport" />
+    <input type="date" name="deldate" id="deldate" class="form-control" required="required"/><br>
+    <input type="text" name="transport" id="transport" class="form-control" placeholder="Transport" />
     <input type="hidden" name="cby" value='' id="cby"/>
 </td></tr>
 </table>
@@ -193,6 +193,12 @@
 var server = localStorage.getItem("Server");
 $(document).ready(function () {
 $("#inds").load(server+"allindustries.php");
+$.ajax({
+    url:server+"getDate.php",
+    success: function(str){
+        $("#deldate").val(str);
+    }
+});
 });
 </script>
 <script>
@@ -202,6 +208,18 @@ var net = ((parseFloat(amt))*(parseFloat($("#"+id+"tax").val())))/100;
 $("#"+id+"amt").val(amt.toFixed(3));
 //alert(net+amt);
 $("#"+id+"net").val((amt+net).toFixed(3));
+}
+
+function showTransport(cid){
+  var fdata={"cid":cid};
+  $.ajax({
+     url:server+"showTransport.php",
+     data:fdata,
+     type:"post",
+     success: function(str){
+       $("#transport").val(str);
+     }
+  });
 }
 </script>
     </body>
