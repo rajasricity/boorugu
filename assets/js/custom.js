@@ -1,4 +1,4 @@
-//localStorage.setItem("Server","http://localhost/boorugu/");
+//localStorage.setItem("Server","http://localhost:8080/boorugu/");
 localStorage.setItem("Server","http://boorugu.in/boorugu/");
 var server = localStorage.getItem("Server");
 $(function(){
