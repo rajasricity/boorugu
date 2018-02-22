@@ -7,7 +7,7 @@
     <author email="sanarajasekhar@gmail.com" href="http://boorugu.com">
         Muktha Sys Information Technology,
     </author>
-    <preference name="orientation" value="portrait" />
+  <preference name="orientation" value="portrait" />
   <preference name="fullscreen" value="true" />
   <preference name="KeepRunning" value="false"/>
   <preference name="SplashScreen" value="screen"/>
